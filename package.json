@@ -1,0 +1,21 @@
+{
+  "name": "pw3",
+  "version": "1.0.0",
+  "description": "API DE CARROS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pw3",
+    "node.js",
+    "etec",
+    "barueri",
+    "3°DS"
+  ],
+  "author": "PEDRO HENRIQUE ALVES",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
