@@ -87,7 +87,8 @@ router.delete("/excluirFabricante/:id", (req, res)=>{
         return res.status(200).json({
             erroStatus: false,
             menssagemStatus: "Exclusão de fabricante feita com sucesso!!"
-        }).catch(
+        });
+    }).catch(
             (erro)=>{
                 return res.status(400).json({
                     erroStatus: true,
@@ -96,7 +97,7 @@ router.delete("/excluirFabricante/:id", (req, res)=>{
                 })
             }
         )
-    })
+    
 });
 
 module.exports = router;
