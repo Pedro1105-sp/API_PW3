@@ -6,7 +6,10 @@ const connection = new Sequelize(
     "",
     {
         host: "localhost",
-        dialect: "mysql"
+        dialect: "mysql",
+        define: {
+            timestamps: false
+        }
     }
 );
 module.exports = connection;

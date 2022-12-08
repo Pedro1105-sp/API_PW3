@@ -21,6 +21,27 @@ router.get("/listarFabricantes", (req, res)=>{
         );
 });
 
+router.get('/listarFabricante/:id',(req, res)=>{
+
+    let {id} = req.params;
+
+    modelFabricante.findByPk(id)
+        .then(
+            (fabricante)=>{
+                res.status(200).json(fabricante);
+            }
+        ).catch(
+            (erro)=>{
+                return res.status(400).json({
+                    erroStatus: true,
+                    erroMessagem: 'ERROR',
+                    erroBancoDados: erro
+                });
+            }
+        );
+
+});
+
 router.post("/inserirFabricantes", (req, res)=>{
     // RECEBER OS DADOS
     let {nome_fabricante, cnpj_fabricante} = req.body;
@@ -49,7 +70,7 @@ router.post("/inserirFabricantes", (req, res)=>{
     );
 });
 
-router.put("/alterarFabricantes", (req, res)=>{
+router.post("/alterarFabricantes", (req, res)=>{
     // RECEBER DADOS
     let {id, nome_fabricante, cnpj_fabricante} = req.body;
 
